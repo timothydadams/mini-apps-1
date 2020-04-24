@@ -1,9 +1,15 @@
 /*
 -----------------------MODEL
 */
+var board = {};
+
+var moves = {
+  player: {},
+  computer: {}
+};
+
 
 var getPlayerMove = function (cell) {
-  console.log('clicked cell: ', cell);
   if (board[cell] === null) {
     board[cell] = 'X';
     updateMoves();
@@ -37,7 +43,6 @@ var getComputerMove = function(moves) {
   }
   board[randomID] = 'O';
   updateMoves();
-  //displayBoard();
 };
 
 /*
@@ -68,10 +73,8 @@ var addListeners = function() {
 */
 
 var checkScore = function() {
-  console.log(board);
-  //spice the board into 3 arrays (rows)
-  var boardArray = Object.values(board);
 
+  var boardArray = Object.values(board);
   //check horizontal rows
   for (var i = 0; i < 9; i = i + 3) {
     if (boardArray[i] === boardArray[i + 1] && boardArray[i + 1] === boardArray[i + 2]) {
@@ -96,10 +99,11 @@ var checkScore = function() {
   }
 
   if (winner === 'X') {
-    alert('You Beat the computer!');
+    return alert('You Beat the computer!');
   } else if (winner === 'O') {
-    alert('You lost :(');
+    return alert('You lost :(');
   }
+
 };
 
 
@@ -114,13 +118,6 @@ var resetBoard = function() {
     computer: {}
   };
   displayBoard();
-};
-
-var board = {};
-
-var moves = {
-  player: {},
-  computer: {}
 };
 
 addListeners();

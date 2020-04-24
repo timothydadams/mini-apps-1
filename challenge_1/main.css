@@ -2,14 +2,11 @@
   display: inline-block;
 }
 
-
 .cell {
-  margin: auto;
   width: 100px;
   height: 100px;
   float: left;
   border: 5px solid black;
-  font-size: xx-large;
+  font-size: 50pt;
   text-align: center;
-
 }
