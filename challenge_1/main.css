@@ -1,0 +1,15 @@
+.board {
+  display: inline-block;
+}
+
+
+.cell {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  float: left;
+  border: 5px solid black;
+  font-size: xx-large;
+  text-align: center;
+
+}
