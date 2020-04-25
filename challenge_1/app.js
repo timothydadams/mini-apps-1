@@ -64,9 +64,13 @@ var checkScore = function () {
 
   if (winner === 'X') {
     game.scores.player++;
+    playerScore.innerText = `Player: ${game.scores.player}`;
+    computerScore.innerText = `Computer: ${game.scores.computer}`;
     setTimeout(()=>alert('You Beat the computer!'), 200);
   } else if (winner === 'O') {
     game.scores.computer++;
+    playerScore.innerText = `Player: ${game.scores.player}`;
+    computerScore.innerText = `Computer: ${game.scores.computer}`;
     setTimeout(()=>alert('You lost :('), 200);
   }
 
@@ -115,3 +119,5 @@ var myBoard = document.getElementById('board');
 myBoard.addEventListener('click', (e) => saveMoveToBoard(e.target.id));
 var resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', resetBoard);
+var playerScore = document.getElementById('playerScore');
+var computerScore = document.getElementById('computerScore');
