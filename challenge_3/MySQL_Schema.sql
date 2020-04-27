@@ -13,9 +13,9 @@ CREATE TABLE customerInfo (
 
 CREATE TABLE addresses (
   id INTEGER NOT NULL AUTO_INCREMENT,
-  customer INTEGER NOT NULL REFERENCES customerInfo(id),
+  customer_id INTEGER NOT NULL REFERENCES customerInfo(id),
   line1 VARCHAR(30) NOT NULL,
-  line2 VARCHAR(10) NOT NULL,
+  line2 VARCHAR(10) DEFAULT NULL,
   city VARCHAR(20) NOT NULL,
   st VARCHAR(2) NOT NULL,
   zip VARCHAR(5) NOT NULL,
@@ -24,8 +24,10 @@ CREATE TABLE addresses (
 
 CREATE TABLE ccInfo (
   id INT NOT NULL AUTO_INCREMENT,
-  customer INT NOT NULL REFERENCES customerInfo(id),
-  exp DATE NOT NULL,
+  customer_id INT NOT NULL REFERENCES customerInfo(id),
+  ccNum VARCHAR(19) NOT NULL DEFAULT ,
+  expYear INT NOT NULL,
+  expMonth INT NOT NULL,
   cvv INT NOT NULL,
   billZip INT NOT NULL,
   PRIMARY KEY (id)
